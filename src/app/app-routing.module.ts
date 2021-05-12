@@ -12,13 +12,14 @@ const routes: Routes = [
         component: HomeComponent,
         data: { title: 'Home' }
       },
+      { path: 'books', loadChildren: () => import('./books/books.module').then(m => m.BooksModule) },
       {
         path: '**',
         redirectTo: '/home',
         pathMatch: 'full'
       }
     ]
-  }
+  },
 ];
 
 @NgModule({
