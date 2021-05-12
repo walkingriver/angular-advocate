@@ -13,13 +13,14 @@ const routes: Routes = [
         data: { title: 'Home' }
       },
       { path: 'books', loadChildren: () => import('./books/books.module').then(m => m.BooksModule) },
+      { path: 'courses', loadChildren: () => import('./courses/courses.module').then(m => m.CoursesModule) },
       {
         path: '**',
         redirectTo: '/home',
         pathMatch: 'full'
       }
     ]
-  },
+  }
 ];
 
 @NgModule({
